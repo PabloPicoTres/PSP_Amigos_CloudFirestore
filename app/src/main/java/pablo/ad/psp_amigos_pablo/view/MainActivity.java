@@ -17,6 +17,8 @@ import pablo.ad.psp_amigos_pablo.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String TAG = "xyzyx";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

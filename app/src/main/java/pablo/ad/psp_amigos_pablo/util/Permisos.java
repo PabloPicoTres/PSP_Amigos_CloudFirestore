@@ -18,9 +18,9 @@ import static android.Manifest.permission.READ_CALL_LOG;
 import static android.Manifest.permission.READ_CONTACTS;
 import static android.Manifest.permission.READ_PHONE_STATE;
 
-public class Permisos extends Fragment {
+public abstract class Permisos extends Fragment {
 
-    public static final String[] PERMISOS_USADOS = {READ_CONTACTS};
+    public static final String[] PERMISOS_USADOS = {READ_CONTACTS, READ_PHONE_STATE, READ_CALL_LOG};
     public static ArrayList<String> codigosDenegados = new ArrayList<>();
     public final int REQUEST_CODE_ASK_PERMISSION = 111;
 
@@ -32,7 +32,7 @@ public class Permisos extends Fragment {
         if( Build.VERSION.SDK_INT>=Build.VERSION_CODES.M ){
             codigosDenegados.clear();
             for(String permiso : PERMISOS_USADOS){
-                if (ContextCompat.checkSelfPermission(context, permiso) == PackageManager.PERMISSION_DENIED) {
+                if (getContext().checkSelfPermission(permiso) == PackageManager.PERMISSION_DENIED) {
 
                     codigosDenegados.add(permiso);
                     tengoPermiso = false;
@@ -55,17 +55,7 @@ public class Permisos extends Fragment {
 
 
 
-    public void pidoPermisos() {
-        if( Build.VERSION.SDK_INT>=Build.VERSION_CODES.M && codigosDenegados.size() > 0 ){
-
-            Object[] adaptador= codigosDenegados.toArray();
-            String[] pideCodigos = Arrays.copyOf(adaptador, adaptador.length, String[].class);
-
-            requestPermissions( pideCodigos , REQUEST_CODE_ASK_PERMISSION );
-
-        }
-
-    }
+    public abstract void pidoPermisos();
 
 
 

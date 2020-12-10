@@ -1,5 +1,6 @@
 package pablo.ad.psp_amigos_pablo.view.fragments;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +16,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import pablo.ad.psp_amigos_pablo.R;
+import pablo.ad.psp_amigos_pablo.receivers.IncommingCallsReceiver;
 import pablo.ad.psp_amigos_pablo.room.pojo.Friend;
 import pablo.ad.psp_amigos_pablo.room.pojo.FriendCallCount;
 import pablo.ad.psp_amigos_pablo.util.Permisos;
@@ -65,7 +68,7 @@ public class FriendListFragment extends Permisos implements OnRVItemClick {
             @Override
             public void onClick(View view) {
                 if(tengoPermiso(getActivity())){
-                    //NavHostFragment.findNavController(FriendListFragment.this).navigate(R.id.action);
+                    NavHostFragment.findNavController(FriendListFragment.this).navigate(R.id.action_lista_amigos_to_contactListFragment);
                 }
             }
         });
@@ -74,7 +77,7 @@ public class FriendListFragment extends Permisos implements OnRVItemClick {
             @Override
             public void onClick(View view) {
                 if(tengoPermiso(getActivity())){
-                    //NavHostFragment.findNavController(FriendListFragment.this).navigate(R.id.action);
+                    NavHostFragment.findNavController(FriendListFragment.this).navigate(R.id.action_lista_amigos_to_callsListFragment);
                 }
             }
         });
@@ -85,5 +88,19 @@ public class FriendListFragment extends Permisos implements OnRVItemClick {
     public void onItemClicked(FriendCallCount friend) {
         viewModel.setCurrentFriend(friend);
         NavHostFragment.findNavController(FriendListFragment.this).navigate(R.id.action_lista_amigos_to_edit_friend);
+    }
+
+    @Override
+    public void pidoPermisos() {
+
+        if( Build.VERSION.SDK_INT>=Build.VERSION_CODES.M && codigosDenegados.size() > 0 ){
+
+            Object[] adaptador= codigosDenegados.toArray();
+            String[] pideCodigos = Arrays.copyOf(adaptador, adaptador.length, String[].class);
+
+            getActivity().requestPermissions( pideCodigos , REQUEST_CODE_ASK_PERMISSION );
+
+        }
+
     }
 }

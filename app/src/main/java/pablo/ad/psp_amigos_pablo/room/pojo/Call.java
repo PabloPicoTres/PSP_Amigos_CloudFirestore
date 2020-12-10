@@ -32,7 +32,7 @@ public class Call {
     }
 
     public Call(){
-        this(0,"");
+        this(-1,"");
     }
 
     public long getId() {

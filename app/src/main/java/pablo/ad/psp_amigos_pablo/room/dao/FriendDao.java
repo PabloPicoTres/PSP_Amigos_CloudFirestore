@@ -27,5 +27,13 @@ public interface FriendDao {
     @Query("select f.name, f.number, f.birthdate, count(c.id) count from friend f left join call c on f.id = c.idFriend group by f.id order by count(c.id)")
     LiveData<List<FriendCallCount>> getFriendCount();
 
+    @Query("select * from friend order by name")
+    List<Friend> getAllFriends();
+
+    @Query("select * from friend where id = :id")
+    Friend getFriendById(long id);
+
+    @Query("select name from friend where id = :id")
+    String getFriendNameById(long id);
 
 }

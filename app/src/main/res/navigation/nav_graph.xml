@@ -13,6 +13,12 @@
         <action
             android:id="@+id/action_lista_amigos_to_edit_friend"
             app:destination="@id/edit_friend" />
+        <action
+            android:id="@+id/action_lista_amigos_to_contactListFragment"
+            app:destination="@id/contactListFragment" />
+        <action
+            android:id="@+id/action_lista_amigos_to_callsListFragment"
+            app:destination="@id/callsListFragment" />
     </fragment>
     <fragment
         android:id="@+id/edit_friend"
@@ -21,6 +27,24 @@
         tools:layout="@layout/edit_friend_fragment">
         <action
             android:id="@+id/action_edit_friend_to_lista_amigos"
+            app:destination="@id/lista_amigos" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactListFragment"
+        android:name="pablo.ad.psp_amigos_pablo.view.fragments.ContactListFragment"
+        android:label="fragment_contact_list"
+        tools:layout="@layout/fragment_contact_list" >
+        <action
+            android:id="@+id/action_contactListFragment_to_lista_amigos"
+            app:destination="@id/lista_amigos" />
+    </fragment>
+    <fragment
+        android:id="@+id/callsListFragment"
+        android:name="pablo.ad.psp_amigos_pablo.view.fragments.CallsListFragment"
+        android:label="fragment_call_list"
+        tools:layout="@layout/fragment_call_list" >
+        <action
+            android:id="@+id/action_callsListFragment_to_lista_amigos"
             app:destination="@id/lista_amigos" />
     </fragment>
 </navigation>

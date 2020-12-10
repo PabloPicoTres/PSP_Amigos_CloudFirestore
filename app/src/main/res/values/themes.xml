@@ -19,6 +19,11 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="deleteButton" parent="Theme.PSP_Amigos_Pablo">
+        <item name="colorPrimary">#CC1818</item>
+        <item name="colorPrimaryVariant">#950101</item>
+    </style>
+
     <style name="Theme.PSP_Amigos_Pablo.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.PSP_Amigos_Pablo.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
