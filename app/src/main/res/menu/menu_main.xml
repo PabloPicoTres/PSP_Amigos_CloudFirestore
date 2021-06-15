@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="pablo.ad.psp_amigos_pablo.view.MainActivity">
+    tools:context="pablo.ad.psp_amigos_firestore.view.MainActivity">
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

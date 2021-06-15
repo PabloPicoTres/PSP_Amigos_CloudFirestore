@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pablo.ad.psp_amigos_pablo">
+    package="pablo.ad.psp_amigos_firestore">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PSP_Amigos_Pablo">
         <activity
-            android:name=".view.MainActivity"
+            android:name="pablo.ad.psp_amigos_firestore.view.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.PSP_Amigos_Pablo.NoActionBar">
             <intent-filter>
@@ -23,14 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver
-            android:name=".receivers.IncommingCallsReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.PHONE_STATE" />
-            </intent-filter>
-        </receiver>
     </application>
 
 </manifest>

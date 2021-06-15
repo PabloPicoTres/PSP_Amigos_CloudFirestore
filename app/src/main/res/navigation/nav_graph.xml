@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/lista_amigos"
-        android:name="pablo.ad.psp_amigos_pablo.view.fragments.FriendListFragment"
+        android:name="pablo.ad.psp_amigos_firestore.view.fragments.FriendListFragment"
         android:label="Lista de amigos"
         tools:layout="@layout/lista_amigos">
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/edit_friend"
-        android:name="pablo.ad.psp_amigos_pablo.view.fragments.EditFriendFragment"
+        android:name="pablo.ad.psp_amigos_firestore.view.fragments.EditFriendFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/edit_friend_fragment">
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/contactListFragment"
-        android:name="pablo.ad.psp_amigos_pablo.view.fragments.ContactListFragment"
+        android:name="pablo.ad.psp_amigos_firestore.view.fragments.ContactListFragment"
         android:label="fragment_contact_list"
         tools:layout="@layout/fragment_contact_list" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/callsListFragment"
-        android:name="pablo.ad.psp_amigos_pablo.view.fragments.CallsListFragment"
+        android:name="pablo.ad.psp_amigos_firestore.view.fragments.CallsListFragment"
         android:label="fragment_call_list"
         tools:layout="@layout/fragment_call_list" >
         <action

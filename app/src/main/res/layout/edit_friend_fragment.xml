@@ -10,21 +10,19 @@
         android:id="@+id/btAtras"
         android:layout_width="182dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="24dp"
         android:text="Atrás"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btConfirmar"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/etFechaD" />
 
     <Button
         android:id="@+id/btConfirmar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="24dp"
         android:text="Confirmar"
         app:layout_constraintBaseline_toBaselineOf="@+id/btAtras"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,41 +33,25 @@
         android:id="@+id/etNombreD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Nombre"
         app:layout_constraintBottom_toTopOf="@+id/tvTelefonoD"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.57"
+        tools:layout_editor_absoluteX="32dp" />
 
     <EditText
         android:id="@+id/etFechaD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="dia/mes/año"
+        android:inputType="date|textPersonName"
         android:text="Fecha"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/tvTelefonoD"
-        app:layout_constraintTop_toBottomOf="@+id/tvTelefonoD" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Llamadas recibidas: "
         app:layout_constraintBottom_toTopOf="@+id/btAtras"
-        app:layout_constraintStart_toStartOf="@+id/etFechaD"
-        app:layout_constraintTop_toBottomOf="@+id/etFechaD" />
-
-    <TextView
-        android:id="@+id/tvNumeroLlamadasD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView"
-        app:layout_constraintStart_toEndOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTelefonoD"
+        tools:layout_editor_absoluteX="32dp" />
 
     <TextView
         android:id="@+id/tvTelefonoD"
@@ -78,19 +60,19 @@
         android:text="Telefono: "
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/etFechaD"
-        app:layout_constraintStart_toStartOf="@+id/etNombreD"
-        app:layout_constraintTop_toBottomOf="@+id/etNombreD" />
+        app:layout_constraintTop_toBottomOf="@+id/etNombreD"
+        tools:layout_editor_absoluteX="32dp" />
 
     <Button
         android:id="@+id/btDeleteFriend"
-        android:layout_width="0dp"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
         android:text="Eliminar amigo"
+        android:theme="@style/deleteButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btAtras"
-        android:theme="@style/deleteButton"/>
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
